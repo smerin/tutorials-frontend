@@ -1,3 +1,8 @@
-const Home = () => <h1>Flipper</h1>;
+const Home = () => (
+  <div>
+    <h1>Flipper</h1>
+    <p>Logged in</p>
+  </div>
+);
 
 export default Home;
