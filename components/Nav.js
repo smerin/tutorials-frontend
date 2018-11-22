@@ -5,6 +5,12 @@ import User from "./User";
 
 const NavStyles = styled.ul`
   display: flex;
+  margin: 1rem 0;
+  padding: 0;
+
+  a {
+    padding: 1rem;
+  }
 `;
 
 const Nav = () => (
