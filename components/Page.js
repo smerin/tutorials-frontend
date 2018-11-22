@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 16px;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -42,16 +42,15 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-size: 1.5rem;
     line-height: 2;
-    font-family: 'radnika_next';
+    font-family: 'Helvetica Neue', 'radnika_next';
   }
   a {
     text-decoration: none;
     color: ${theme.black};
   }
   button {
-    font-family: 'radnika_next';
+    font-family: 'Helvetica Neue', 'radnika_next';
   }
 `;
 
