@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import Input from "../fields/Input";
+import Button from "../fields/Button";
 import Form from "../styles/Form";
 import Error from "../ErrorMessage";
 import { CURRENT_USER_QUERY } from "./User";
@@ -44,28 +46,27 @@ class Signin extends Component {
           >
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Sign into your account</h2>
+
+              <Input
+                id="signinEmail"
+                type="email"
+                name="email"
+                label="Email"
+                value={this.state.email}
+                handleChange={this.saveToState}
+              />
+              <Input
+                id="signinPassword"
+                type="password"
+                name="password"
+                label="Password"
+                value={this.state.password}
+                handleChange={this.saveToState}
+              />
+              <Button id="signupSubmit" type="submit" isSubmitting={loading}>
+                Sign in
+              </Button>
               <Error error={error} />
-              <label htmlFor="email">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  value={this.state.email}
-                  onChange={this.saveToState}
-                />
-              </label>
-              <label htmlFor="password">
-                Password
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  value={this.state.password}
-                  onChange={this.saveToState}
-                />
-              </label>
-              <button type="submit">Sign in!</button>
             </fieldset>
           </Form>
         )}

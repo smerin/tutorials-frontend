@@ -1,19 +1,11 @@
 import React, { Component } from "react";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
 import Header from "./Header";
 import Meta from "./Meta";
 
-const theme = {
-  blue: "#5AB4CE",
-  blueHover: "#33A2C1",
-  red: "#FF0000",
-  black: "#393939",
-  grey: "#3A3A3A",
-  lightGrey: "#E1E1E1",
-  offWhite: "#EDEDED",
-  maxWidth: "1000px",
-  bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
-};
+import theme from "./styles/theme.js";
+import GlobalStyle from "./styles/global.js";
 
 const StyledPage = styled.div`
   background: white;
@@ -26,45 +18,12 @@ const Inner = styled.div`
   padding: 2rem;
 `;
 
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'radnika_next';
-    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  body {
-    padding: 0;
-    margin: 0;
-    line-height: 2;
-    font-family: 'Helvetica Neue', 'radnika_next';
-  }
-  a {
-    text-decoration: none;
-    color: ${theme.blue};
-
-    &:hover {
-      color: ${theme.blueHover};
-    }
-  }
-  button {
-    font-family: 'Helvetica Neue', 'radnika_next';
-  }
-`;
-
 class Page extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
         <StyledPage>
+          <Normalize />
           <GlobalStyle />
           <Meta />
           <Header />
