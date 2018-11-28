@@ -4,6 +4,8 @@ import Header from "./Header";
 import Meta from "./Meta";
 
 const theme = {
+  blue: "#5AB4CE",
+  blueHover: "#33A2C1",
   red: "#FF0000",
   black: "#393939",
   grey: "#3A3A3A",
@@ -47,7 +49,11 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${theme.black};
+    color: ${theme.blue};
+
+    &:hover {
+      color: ${theme.blueHover};
+    }
   }
   button {
     font-family: 'Helvetica Neue', 'radnika_next';

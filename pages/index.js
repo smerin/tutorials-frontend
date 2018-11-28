@@ -1,6 +1,6 @@
 const Home = () => (
   <div>
-    <h1>Flipper</h1>
+    <h1>Home</h1>
   </div>
 );
 

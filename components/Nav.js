@@ -13,7 +13,11 @@ const NavStyles = styled.ul`
     padding: 1rem;
     font-size: 1rem;
     line-height: 1rem;
-    color: ${props => props.theme.black};
+    color: ${props => props.theme.blue};
+
+    &:hover {
+      color: ${props => props.theme.blueHover};
+    }
   }
   button {
     margin: 0;
@@ -27,14 +31,14 @@ const Nav = () => (
   <User>
     {({ data: { me } }) => (
       <NavStyles>
+        <Link href="/learn">
+          <a>Learn</a>
+        </Link>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
         {me && (
           <>
-            <Link href="/sell">
-              <a>Sell</a>
-            </Link>
-            <Link href="/orders">
-              <a>Orders</a>
-            </Link>
             <Link href="/me">
               <a>Account</a>
             </Link>
