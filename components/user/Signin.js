@@ -45,7 +45,7 @@ class Signin extends Component {
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Sign into your account</h2>
+              <h2>Sign in to your account</h2>
 
               <Input
                 id="signinEmail"
@@ -63,7 +63,7 @@ class Signin extends Component {
                 value={this.state.password}
                 handleChange={this.saveToState}
               />
-              <Button id="signupSubmit" type="submit" isSubmitting={loading}>
+              <Button id="signinSubmit" type="submit" isSubmitting={loading}>
                 Sign in
               </Button>
               <Error error={error} />

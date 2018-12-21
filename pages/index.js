@@ -1,4 +1,4 @@
-import MusicPlayer from "../components/MusicPlayer";
+import MusicPlayer from "../components/player/MusicPlayer";
 
 const Home = () => (
   <div>

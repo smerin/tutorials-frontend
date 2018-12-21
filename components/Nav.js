@@ -37,10 +37,13 @@ const Nav = () => (
         <Link href="/blog">
           <a>Blog</a>
         </Link>
+        <Link href="/lessons">
+          <a>Lessons</a>
+        </Link>
         {me && (
           <>
-            <Link href="/me">
-              <a>Account</a>
+            <Link href="/add">
+              <a>Add</a>
             </Link>
             <Signout />
           </>

@@ -14,6 +14,7 @@ const loading = keyframes`
 
 const Form = styled.form`
   max-width: 32rem;
+  margin: 2rem auto;
   padding: 1.5rem;
   background: white;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);

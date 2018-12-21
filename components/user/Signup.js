@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import Input from "../fields/Input";
+import Button from "../fields/Button";
 import Form from "../styles/Form";
 import Error from "../ErrorMessage";
 import { CURRENT_USER_QUERY } from "./User";
@@ -48,38 +50,34 @@ class Signup extends Component {
           >
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Signup for an account</h2>
+              <Input
+                id="signupName"
+                type="text"
+                name="name"
+                label="Name"
+                value={this.state.name}
+                handleChange={this.saveToState}
+              />
+              <Input
+                id="signupEmail"
+                type="email"
+                name="email"
+                label="Email"
+                value={this.state.email}
+                handleChange={this.saveToState}
+              />
+              <Input
+                id="signupPassword"
+                type="password"
+                name="password"
+                label="Password"
+                value={this.state.password}
+                handleChange={this.saveToState}
+              />
+              <Button id="signupSubmit" type="submit" isSubmitting={loading}>
+                Sign in
+              </Button>
               <Error error={error} />
-              <label htmlFor="email">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  value={this.state.email}
-                  onChange={this.saveToState}
-                />
-              </label>
-              <label htmlFor="name">
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  value={this.state.name}
-                  onChange={this.saveToState}
-                />
-              </label>
-              <label htmlFor="password">
-                Password
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  value={this.state.password}
-                  onChange={this.saveToState}
-                />
-              </label>
-              <button type="submit">Sign up!</button>
             </fieldset>
           </Form>
         )}
