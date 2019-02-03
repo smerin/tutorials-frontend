@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Link from "next/link";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
@@ -7,13 +6,14 @@ const LESSONS_QUERY = gql`
   query LESSONS_QUERY {
     lessons(orderby: createdAt_DESC) {
       id
+      slug
       title
       description
     }
   }
 `;
 
-const Lesson = ({ id }) => (
+const Lesson = () => (
   <Query query={LESSONS_QUERY}>
     {({ data: { lessons }, error, loading }) => {
       if (loading) return <p>Loading...</p>;
@@ -23,10 +23,13 @@ const Lesson = ({ id }) => (
       return (
         <div>
           {lessons.map(lesson => (
-            <div>
+            <div key={lesson.id}>
               <h1>{lesson.title}</h1>
               <p>{lesson.description}</p>
-              <Link href={`/lesson?id=${lesson.id}`}>
+              <Link
+                as={`/lesson/${lesson.slug}`}
+                href={`/lesson?id=${lesson.id}`}
+              >
                 <a>View lesson</a>
               </Link>
             </div>
@@ -36,9 +39,5 @@ const Lesson = ({ id }) => (
     }}
   </Query>
 );
-
-Lesson.propTypes = {
-  id: PropTypes.string.isRequired
-};
 
 export default Lesson;

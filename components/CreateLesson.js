@@ -22,6 +22,7 @@ const CREATE_LESSON_MUTATION = gql`
 class CreateLesson extends Component {
   state = {
     title: "",
+    slug: "",
     description: "",
     videoUrl: ""
   };
@@ -48,6 +49,14 @@ class CreateLesson extends Component {
               name="title"
               label="Title"
               value={this.state.title}
+              handleChange={this.saveToState}
+            />
+            <Input
+              type="text"
+              id="createLessonSlug"
+              name="slug"
+              label="Slug"
+              value={this.state.slug}
               handleChange={this.saveToState}
             />
             <Input
